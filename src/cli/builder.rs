@@ -25,7 +25,6 @@ fn build_subcommands() -> Vec<App<'static, 'static>> {
     vec![
         SubCommand::with_name("ip").about("Looks up the IP addresses for a particular host"),
         SubCommand::with_name("mx").about("Looks up the DNS MX records for a particular host"),
-        SubCommand::with_name("ns")
-            .about("Looks up the Name Servers for a particular host"),
+        SubCommand::with_name("ns").about("Looks up the Name Servers for a particular host"),
     ]
 }
