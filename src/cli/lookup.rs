@@ -12,21 +12,21 @@ pub fn lookup(matches: ArgMatches) {
 
             response
                 .iter()
-                .for_each(|ip| println!("{}", ip));
+                .for_each(|ip| println!("{ip}"));
         }
         Some("mx") => {
             let response = resolver.mx_lookup(address).unwrap();
 
             response
                 .iter()
-                .for_each(|record| println!("{}", record));
+                .for_each(|record| println!("{record}"));
         }
         Some("ns") => {
             let response = resolver.ns_lookup(address).unwrap();
 
             response
                 .iter()
-                .for_each(|name| println!("{}", name));
+                .for_each(|name| println!("{name}"));
         }
         _ => println!("Please specify what you want to lookup (ip, mx, ns).\n\nFor more information try --help")
     }
