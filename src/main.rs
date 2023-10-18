@@ -1,9 +1,10 @@
 mod cli;
 
+use clap::Parser;
 use cli::{builder, lookup};
 
 fn main() {
-    let matches = builder::build_app().get_matches();
+    let cli = builder::Cli::parse();
 
-    lookup::lookup(matches);
+    lookup::lookup(cli);
 }
