@@ -28,7 +28,13 @@ fn main() {
 
     match &cli.command {
         Commands::Ip => {
-            let response = resolver.lookup_ip(cli.address).unwrap();
+            let response = resolver.ipv6_lookup(&cli.address).unwrap();
+
+            for ip in response {
+                println!("{ip}")
+            }
+
+            let response = resolver.ipv4_lookup(cli.address).unwrap();
 
             for ip in response {
                 println!("{ip}")
